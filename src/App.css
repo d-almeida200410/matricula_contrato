@@ -1,0 +1,537 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background-color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.home {
+  background-image: url('/public/rb_2150542620.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  max-width: 50%;
+}
+
+.logo img {
+  border-radius: 40px;
+  margin-left: 65%;
+  margin-top: 8%;
+}
+
+.homepagetitle {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Estilo do h1 com a fonte Cinzel */
+.homepagetitle h1 {
+  font-size: 2rem;
+  font-family: 'Courier New', Courier, monospace; /* Fonte rebuscada */
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  text-transform: uppercase;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+/* Estilo das palavras individualmente */
+.homepagetitle .word {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  background: linear-gradient(45deg, #11ff00, #ff0000, #3700ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 1ch; /* Espaço do cursor */
+  background-color: transparent;
+  animation: blink 0.8s step-start infinite;
+  color: #fff; /* Cor do cursor */
+}
+
+@keyframes blink {
+  50% {
+      opacity: 0;
+  }
+}
+
+/* Mudança de cor ao passar o mouse */
+.homepagetitle h1:hover .word {
+  transform: scale(1.1) rotate(-5deg);
+  color: #ff0;
+}
+
+.homepagetitle h1:hover .word:nth-child(1) {
+  color: #ff00ae;
+}
+
+.homepagetitle h1:hover .word:nth-child(2) {
+  color: #c3ff00;
+}
+
+.homepagetitle h1:hover .word:nth-child(3) {
+  color: #50d9ff;
+}
+
+/* Animação das palavras */
+.homepagetitle .word {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1.5s forwards;
+  font-size: 5rem; /* Tamanho base */
+  position: relative; /* Necessário para efeitos ::before */
+}
+
+/* Estilos responsivos */
+@media (max-width: 1200px) {
+  .logo {
+    max-width: 60%;
+  }
+
+  .homepagetitle h1 {
+    font-size: 1.8rem;
+  }
+
+  .homepagetitle .word {
+    font-size: 3.5rem; /* Reduz o tamanho das palavras para telas menores */
+  }
+}
+
+@media (max-width: 992px) {
+  .logo {
+    max-width: 70%;
+  }
+
+  .homepagetitle h1 {
+    font-size: 1.6rem;
+  }
+
+  .homepagetitle .word {
+    font-size: 3rem; /* Reduz ainda mais para telas menores */
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    max-width: 80%;
+    margin-left: 50%; /* Centraliza logo */
+    margin-top: 4%;
+  }
+
+  .homepagetitle h1 {
+    font-size: 1.4rem;
+    text-align: center; /* Centraliza título */
+  }
+
+  .homepagetitle .word {
+    font-size: 2.5rem; /* Ajusta tamanho das palavras */
+  }
+
+  /* Melhorando o comportamento da imagem de fundo em telas pequenas */
+  .home {
+    min-height: auto; /* Remove a altura mínima para garantir que o conteúdo caiba */
+  }
+}
+
+@media (max-width: 576px) {
+  .logo img {
+    width: 70%; /* Ajusta logo para telas pequenas */
+    margin-left: 50%;
+    margin-top: 5%;
+  }
+
+  .homepagetitle h1 {
+    font-size: 1.2rem; /* Tamanho do título em telas muito pequenas */
+  }
+
+  .homepagetitle .word {
+    font-size: 2rem; /* Ajusta ainda mais o tamanho das palavras */
+  }
+
+  .home {
+    padding: 20px; /* Adiciona padding para telas pequenas */
+  }
+}
+
+@media (max-width: 400px) {
+  .homepagetitle h1 {
+    font-size: 1rem; /* Reduz ainda mais o tamanho do título */
+  }
+
+  .homepagetitle .word {
+    font-size: 1.5rem; /* Tamanho mínimo para palavras em telas menores */
+  }
+
+  .logo img {
+    width: 60%; /* Logo mais compacta em telas pequenas */
+  }
+}
+
+  /* Ajustes para telas maiores */
+@media (max-width: 1200px) {
+  .homepagetitle h1 {
+    font-size: 1.8rem;
+  }
+
+  .homepagetitle .word {
+    font-size: 4rem;
+  }
+
+  .logo img {
+    margin-left: 50%;
+    margin-top: 5%;
+  }
+}
+
+/* Ajustes para telas médias (tablets) */
+@media (max-width: 768px) {
+  .homepagetitle h1 {
+    font-size: 1.5rem; /* Reduz o tamanho do título */
+  }
+
+  .homepagetitle .word {
+    font-size: 3rem; /* Ajusta o tamanho das palavras */
+  }
+
+  .logo {
+    max-width: 80%;
+  }
+
+  .logo img {
+    margin-left: 35%; /* Ajusta o alinhamento da imagem */
+    margin-top: 3%;
+  }
+}
+
+/* Ajustes para telas pequenas (smartphones) */
+@media (max-width: 480px) {
+  .homepagetitle h1 {
+    font-size: 1.2rem; /* Reduz ainda mais o tamanho do título */
+  }
+
+  .homepagetitle .word {
+    font-size: 2.5rem; /* Ajusta ainda mais o tamanho das palavras */
+  }
+
+  .logo {
+    max-width: 90%; /* Reduz o tamanho da logo */
+  }
+
+  .logo img {
+    margin-left: 25%; /* Ajuste no alinhamento da imagem */
+    margin-top: 2%;
+  }
+
+  .home {
+    min-height: auto; /* Remove altura mínima para telas pequenas */
+    padding: 20px; /* Adiciona padding para maior espaçamento */
+  }
+}
+
+/* Animação de fadeIn */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delay de animação para palavras diferentes */
+.homepagetitle .word:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.homepagetitle .word:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.homepagetitle .word:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Efeito de sombra para as palavras */
+.homepagetitle .word::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: #000;
+  filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.homepagetitle .word:hover::before {
+  filter: blur(20px);
+  transform: translate(5px, 5px);
+}
+
+/* Responsividade para animação e palavras */
+@media (max-width: 768px) {
+  .blinking-cursor {
+    width: 0.8ch; /* Ajusta o tamanho do cursor para telas menores */
+  }
+
+  .homepagetitle .word {
+    font-size: 2.5rem; /* Reduz o tamanho das palavras em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .homepagetitle h1 {
+    font-size: 1.8rem; /* Ajusta o tamanho do título para telas pequenas */
+    text-align: center; /* Centraliza o texto em dispositivos menores */
+  }
+
+  .homepagetitle .word {
+    font-size: 2rem; /* Reduz ainda mais o tamanho das palavras */
+    animation: fadeIn 1s forwards; /* Animação mais rápida para evitar lentidão */
+  }
+
+  .blinking-cursor {
+    width: 0.5ch; /* Cursor menor em dispositivos pequenos */
+  }
+}
+
+/* Estilo para formulário responsivo */
+.formulario {
+  background-color: #50d9ff;
+  max-width: 90%; /* Ajusta a largura máxima em telas menores */
+  margin: 20px auto;
+}
+
+.formulario {
+  max-width: 700px;
+  margin: 20px auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+}
+
+.formulario h2 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.formulario input[type="text"],
+.formulario input[type="date"],
+.formulario input[type="number"],
+.formulario input[type="time"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Responsividade do formulário */
+@media (max-width: 768px) {
+  .formulario {
+    padding: 15px 20px; /* Ajusta o padding para telas menores */
+  }
+
+  .formulario h2 {
+    font-size: 18px; /* Ajusta o tamanho do título */
+  }
+
+  .formulario input[type="text"],
+  .formulario input[type="date"],
+  .formulario input[type="number"],
+  .formulario input[type="time"] {
+    font-size: 14px; /* Reduz o tamanho da fonte nos campos do formulário */
+  }
+}
+
+@media (max-width: 480px) {
+  .formulario {
+    max-width: 100%; /* Faz com que o formulário ocupe toda a largura disponível */
+    padding: 10px 15px; /* Diminui o padding para telas muito pequenas */
+  }
+
+  .formulario h2 {
+    font-size: 16px; /* Ajuste ainda mais o tamanho do título */
+  }
+
+  .formulario input[type="text"],
+  .formulario input[type="date"],
+  .formulario input[type="number"],
+  .formulario input[type="time"] {
+    font-size: 12px; /* Reduz ainda mais o tamanho da fonte nos campos */
+  }
+}
+
+.radio-group, 
+.checkbox-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.radio-group label,
+.checkbox-group label {
+  margin-left: 5px;
+}
+
+.formulario input[type="radio"],
+.formulario input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+  .formulario {
+    padding: 20px;
+  }
+
+  .formulario h2 {
+    font-size: 18px;
+  }
+
+  .formulario input[type="text"],
+  .formulario input[type="date"],
+  .formulario input[type="number"],
+  .formulario input[type="time"] {
+    font-size: 14px;
+  }
+
+  .radio-group, 
+  .checkbox-group {
+    flex-direction: column; /* Alinha os radio buttons e checkboxes em uma coluna */
+    gap: 15px; /* Aumenta o espaço entre os elementos */
+  }
+
+  .radio-group label,
+  .checkbox-group label {
+    margin-left: 0; /* Remove a margem esquerda para melhorar a alinhamento */
+  }
+}
+
+/* Estilo para observações */
+.obs {
+  color: #ff0000;
+  font-weight: 900;
+}
+
+/* Estilo básico para o botão */
+.botaosalvar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+/* Efeito de hover */
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Efeito de foco */
+button:focus {
+  outline: none;
+  border: 2px solid #45a049;
+}
+
+/* Animação de clique */
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Adicionando uma animação inicial ao carregar */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Responsividade adicional */
+@media (max-width: 768px) {
+  button {
+    font-size: 14px; /* Reduz o tamanho do botão em telas menores */
+    padding: 10px 20px; /* Ajusta o tamanho do botão */
+  }
+
+  .formulario input[type="radio"],
+  .formulario input[type="checkbox"] {
+    width: auto; /* Evita que os campos de seleção fiquem muito grandes */
+  }
+
+  .formulario {
+    padding: 15px; /* Reduz o padding do formulário em telas pequenas */
+  }
+}
+
+@media (max-width: 400px) {
+  button {
+    font-size: 12px; /* Reduz ainda mais o tamanho do botão em telas muito pequenas */
+    padding: 8px 16px; /* Ajusta o tamanho do botão */
+  }
+
+  .formulario input[type="radio"],
+  .formulario input[type="checkbox"] {
+    width: auto; /* Mantém o tamanho adequado para campos de seleção */
+  }
+
+  .formulario {
+    padding: 10px; /* Diminui o padding em telas muito pequenas */
+  }
+}
+
+
+
