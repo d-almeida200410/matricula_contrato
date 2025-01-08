@@ -421,8 +421,6 @@ function Formulario() {
 
           {/* Assinaturas */}
           <div className="assinaturas">
-            <p>Contratante: _________________________________________</p>
-
             <label style={{ color: "#4CAF50" }} htmlFor="data_assinatura">
               Data da Assinatura:
             </label>

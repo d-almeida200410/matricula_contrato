@@ -532,6 +532,158 @@ button {
     padding: 10px; /* Diminui o padding em telas muito pequenas */
   }
 }
+.formulario {
+  max-width: 700px;
+  margin: 20px auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  box-sizing: border-box; /* Garante que o padding não cause overflow */
+}
+
+.formulario h2 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.formulario input[type="text"],
+.formulario input[type="date"],
+.formulario input[type="number"],
+.formulario input[type="time"],
+.formulario textarea,
+.formulario select {
+  width: calc(100% - 20px); /* Reduz 10px de cada lado para padding/margem */
+  max-width: 100%; /* Garante que não exceda os limites */
+  padding: 10px;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+}
+
+/* Estilo dos grupos de radio e checkbox */
+.radio-group, 
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.radio-group label,
+.checkbox-group label {
+  margin-left: 5px;
+}
+
+.formulario input[type="radio"],
+.formulario input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Botão estilizado */
+button {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .formulario {
+    padding: 15px;
+  }
+
+  .formulario h2 {
+    font-size: 18px;
+  }
+
+  .formulario input[type="text"],
+  .formulario input[type="date"],
+  .formulario input[type="number"],
+  .formulario input[type="time"],
+  .formulario textarea,
+  .formulario select {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formulario {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .radio-group, 
+  .checkbox-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+/* Estilo dos grupos de radio e checkbox */
+.radio-group, 
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center; /* Alinha os itens ao centro */
+}
+
+.radio-group label,
+.checkbox-group label {
+  display: flex;
+  align-items: center; /* Garante que o texto e o input fiquem alinhados */
+  gap: 5px; /* Espaço entre o checkbox/radio e o texto */
+}
+
+.formulario input[type="radio"],
+.formulario input[type="checkbox"] {
+  margin: 0; /* Remove margem extra */
+  vertical-align: middle; /* Alinha verticalmente com o texto */
+}
+
+/* Responsividade para grupos */
+@media (max-width: 600px) {
+  .radio-group, 
+  .checkbox-group {
+    flex-direction: column; /* Alinha itens em coluna em telas menores */
+    gap: 15px; /* Espaço entre os elementos */
+  }
+
+  .radio-group label,
+  .checkbox-group label {
+    gap: 10px; /* Aumenta o espaço para melhorar a legibilidade */
+  }
+}
+
+
 
 
 
